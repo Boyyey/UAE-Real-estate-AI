@@ -1,0 +1,53 @@
+location,latitude,longitude,price,property_type,bedrooms,furnished,pet_friendly,school,park,supermarket,new_listing,family_friendly
+Downtown Dubai,25.1972,55.2744,2200000,apartment,2,1,1,1,1,1,1,1
+Dubai Marina,25.0800,55.1400,1700000,apartment,1,1,0,1,0,1,0,1
+Deira,25.2697,55.3088,1100000,apartment,2,0,1,1,1,0,0,1
+Jumeirah,25.1880,55.2320,2500000,villa,4,1,1,1,1,1,1,1
+Al Barsha,25.1113,55.2004,1300000,apartment,3,0,1,0,1,1,1,1
+Business Bay,25.1841,55.2722,1800000,apartment,2,1,0,1,0,1,0,1
+Palm Jumeirah,25.1122,55.1389,3500000,villa,5,1,1,0,1,1,1,1
+Abu Dhabi Corniche,24.4926,54.3705,2100000,apartment,3,1,0,1,1,0,1,1
+Al Reem Island,24.4934,54.4107,1600000,apartment,2,0,1,0,0,1,0,1
+Khalifa City,24.4257,54.6050,1200000,villa,4,1,1,1,0,0,1,1
+Al Nahda,25.2997,55.3667,900000,apartment,1,0,0,1,1,1,1,1
+Mirdif,25.2186,55.4187,1400000,villa,3,1,1,1,1,1,0,1
+Al Qusais,25.2767,55.3694,950000,apartment,2,0,1,1,0,1,1,1
+Al Rigga,25.2631,55.3167,1050000,apartment,1,1,0,1,1,0,0,1
+JLT,25.0657,55.1444,1750000,apartment,2,1,1,1,1,1,1,1
+Tecom,25.1011,55.1744,1450000,apartment,1,0,1,0,1,1,0,1
+Al Karama,25.2417,55.3047,1150000,apartment,2,1,0,1,1,1,1,1
+Satwa,25.2522,55.2822,1250000,apartment,2,0,1,1,0,1,0,1
+Al Safa,25.1811,55.2433,2300000,villa,4,1,1,1,1,1,1,1
+Al Warqa,25.2044,55.4244,1350000,villa,3,0,1,0,1,1,1,1
+Al Mizhar,25.2511,55.4411,1200000,villa,3,1,0,1,1,0,0,1
+Sharjah Al Majaz,25.3463,55.3911,950000,apartment,2,0,1,1,1,1,1,1
+Sharjah Al Nahda,25.3197,55.3789,900000,apartment,1,1,0,1,0,1,0,1
+Sharjah Al Khan,25.3333,55.3833,1000000,apartment,2,0,1,1,1,1,1,1
+Ajman Corniche,25.4172,55.4356,850000,apartment,1,1,1,0,1,1,1,1
+Ajman Al Nuaimiya,25.4050,55.4533,800000,apartment,2,0,0,1,1,0,0,1
+Ajman Al Rashidiya,25.4033,55.4467,900000,apartment,2,1,1,1,0,1,1,1
+Abu Dhabi Khalidiya,24.4822,54.3567,2000000,apartment,3,1,1,1,1,1,1,1
+Abu Dhabi Al Mushrif,24.4533,54.3778,1800000,villa,4,0,1,1,1,1,0,1
+Abu Dhabi Al Muroor,24.4667,54.3833,1700000,apartment,2,1,0,1,0,1,1,1
+Abu Dhabi Al Reem,24.4934,54.4107,1600000,apartment,2,0,1,0,1,1,1,1
+Abu Dhabi Al Bateen,24.4667,54.3333,2500000,villa,5,1,1,1,1,1,1,1
+Abu Dhabi Al Raha,24.4294,54.6033,1500000,apartment,2,0,1,1,0,1,0,1
+Abu Dhabi Al Shamkha,24.4250,54.7000,1200000,villa,4,1,0,1,1,0,1,1
+Abu Dhabi Al Falah,24.4283,54.7100,1100000,villa,3,0,1,0,1,1,1,1
+Abu Dhabi Al Maqtaa,24.4183,54.4850,1400000,apartment,2,1,1,1,1,1,1,1
+Abu Dhabi Al Nahyan,24.4767,54.3700,1600000,apartment,2,0,1,1,0,1,0,1
+Abu Dhabi Al Mushrif Gardens,24.4533,54.3778,1850000,villa,4,1,1,1,1,1,1,1
+Sharjah Al Taawun,25.3200,55.3767,950000,apartment,2,0,1,1,1,1,1,1
+Sharjah Al Qasimia,25.3572,55.3911,900000,apartment,1,1,0,1,0,1,0,1
+Sharjah Al Yarmook,25.3572,55.3833,850000,apartment,1,0,1,1,1,1,1,1
+Sharjah Al Butina,25.3572,55.3700,800000,apartment,2,1,1,1,0,1,1,1
+Ajman Al Jurf,25.4233,55.5133,850000,apartment,2,0,1,1,1,1,1,1
+Ajman Al Rawda,25.4000,55.5000,900000,apartment,2,1,0,1,1,0,0,1
+Ajman Al Mowaihat,25.4000,55.5167,950000,apartment,3,0,1,1,1,1,1,1
+Ajman Al Hamidiya,25.4167,55.5000,1000000,apartment,2,1,1,1,1,1,1,1
+Ajman Al Nuaimiya 2,25.4050,55.4533,850000,apartment,1,0,1,1,1,1,1,1
+Ajman Al Rashidiya 3,25.4033,55.4467,900000,apartment,2,1,0,1,0,1,0,1
+Ajman Al Bustan,25.4000,55.4500,950000,apartment,2,0,1,1,1,1,1,1
+Ajman Al Zahra,25.4000,55.4667,1000000,apartment,3,1,1,1,1,1,1,1
+Ajman Al Manama,25.4000,55.4833,1050000,apartment,2,0,1,1,1,1,1,1
+Ajman Al Humaidiya,25.4167,55.5000,1100000,apartment,2,1,1,1,1,1,1,1 

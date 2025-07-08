@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAE Housing Affordability Heatmap</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="controls">
+        <label for="profession-select">Profession:</label>
+        <select id="profession-select">
+            <option>Teacher</option>
+            <option>Engineer</option>
+            <option>Nurse</option>
+            <option>Doctor</option>
+            <option>IT Specialist</option>
+            <option>Retail Worker</option>
+            <option>Banker</option>
+            <option>Construction Worker</option>
+            <option>Police Officer</option>
+            <option>Hotel Manager</option>
+            <option>Driver</option>
+            <option>Accountant</option>
+            <option>Architect</option>
+            <option>Chef</option>
+            <option>Salesperson</option>
+            <option>Marketing Manager</option>
+            <option>HR Manager</option>
+            <option>Lawyer</option>
+            <option>Pharmacist</option>
+            <option>Dentist</option>
+            <option>Pilot</option>
+            <option>Flight Attendant</option>
+            <option>Receptionist</option>
+            <option>Security Guard</option>
+            <option>Cleaner</option>
+            <option>Electrician</option>
+            <option>Plumber</option>
+            <option>Firefighter</option>
+            <option>Graphic Designer</option>
+            <option>Business Analyst</option>
+            <option>Project Manager</option>
+        </select>
+        <button id="analytics-btn">Advanced Analytics</button>
+        <button id="darkmode-toggle" title="Toggle dark mode">🌙</button>
+        <button id="help-btn" title="Help & Onboarding">?</button>
+    </div>
+    <div id="map"></div>
+    <div id="analytics-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Advanced Analytics & Filters</h2>
+            <div id="analytics-content">
+                <input type="text" id="area-search" placeholder="Search area name..." />
+                <br><br>
+                <div id="amenities-filter">
+                    <label><input type="checkbox" value="school" checked> Near School</label>
+                    <label><input type="checkbox" value="park" checked> Near Park</label>
+                    <label><input type="checkbox" value="supermarket" checked> Supermarket Nearby</label>
+                </div>
+                <br>
+                <label for="property-type-select">Property Type:</label>
+                <select id="property-type-select">
+                    <option value="">Any</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="villa">Villa</option>
+                </select>
+                <label for="bedrooms-select">Bedrooms:</label>
+                <select id="bedrooms-select">
+                    <option value="">Any</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5+</option>
+                </select>
+                <label><input type="checkbox" id="furnished-filter"> Furnished</label>
+                <label><input type="checkbox" id="pet-filter"> Pet Friendly</label>
+                <label><input type="checkbox" id="new-listing-filter"> New Listing</label>
+                <label><input type="checkbox" id="family-filter"> Family Friendly</label>
+                <br><br>
+                <label for="price-slider">Max Price (AED): <span id="price-value"></span></label>
+                <input type="range" id="price-slider" min="70000" max="3500000" step="10000" value="3500000">
+                <br><br>
+                <label for="proximity-slider">Max Distance to Transport (km): <span id="proximity-value"></span></label>
+                <input type="range" id="proximity-slider" min="0" max="20" step="0.5" value="20">
+                <br><br>
+                <label for="multi-profession">Compare Professions:</label>
+                <select id="multi-profession" multiple size="8">
+                    <option>Teacher</option>
+                    <option>Engineer</option>
+                    <option>Nurse</option>
+                    <option>Doctor</option>
+                    <option>IT Specialist</option>
+                    <option>Retail Worker</option>
+                    <option>Banker</option>
+                    <option>Construction Worker</option>
+                    <option>Police Officer</option>
+                    <option>Hotel Manager</option>
+                    <option>Driver</option>
+                    <option>Accountant</option>
+                    <option>Architect</option>
+                    <option>Chef</option>
+                    <option>Salesperson</option>
+                    <option>Marketing Manager</option>
+                    <option>HR Manager</option>
+                    <option>Lawyer</option>
+                    <option>Pharmacist</option>
+                    <option>Dentist</option>
+                    <option>Pilot</option>
+                    <option>Flight Attendant</option>
+                    <option>Receptionist</option>
+                    <option>Security Guard</option>
+                    <option>Cleaner</option>
+                    <option>Electrician</option>
+                    <option>Plumber</option>
+                    <option>Firefighter</option>
+                    <option>Graphic Designer</option>
+                    <option>Business Analyst</option>
+                    <option>Project Manager</option>
+                </select>
+                <br><br>
+                <button id="export-btn">Export Heatmap as Image</button>
+                <button id="download-csv-btn">Download Data as CSV</button>
+                <button id="smart-suggest-btn">Smart Suggest</button>
+                <br><br>
+                <div id="top-areas">
+                    <h3>Top 3 Affordable Areas</h3>
+                    <ul id="top-areas-list"></ul>
+                </div>
+                <div id="least-areas">
+                    <h3>3 Least Affordable Areas</h3>
+                    <ul id="least-areas-list"></ul>
+                </div>
+                <div id="comparison-table-container"></div>
+            </div>
+        </div>
+    </div>
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-help">&times;</span>
+            <h2>Welcome to the UAE Housing Affordability Heatmap!</h2>
+            <ol>
+                <li>Use the <b>Profession</b> dropdown to see affordability for your job.</li>
+                <li>Open <b>Advanced Analytics</b> for powerful filters and comparisons.</li>
+                <li>Filter by <b>area name</b> or <b>amenities</b> to find your perfect spot.</li>
+                <li>Use the <b>Cost Calculator</b> to get personalized area suggestions.</li>
+                <li>Toggle <b>Dark Mode</b> for a beautiful night look.</li>
+                <li>Export or download your results, and use <b>Smart Suggest</b> for AI-powered recommendations!</li>
+            </ol>
+        </div>
+    </div>
+    <div id="calculator-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-calc">&times;</span>
+            <h2>Cost Calculator & Area Suggestion</h2>
+            <form id="calculator-form">
+                <label>Income (AED/year): <input type="number" id="calc-income" min="10000" max="1000000" required></label><br><br>
+                <label>Family Size: <input type="number" id="calc-family" min="1" max="12" required></label><br><br>
+                <label>Desired Amenities:</label><br>
+                <label><input type="checkbox" name="calc-amenities" value="school" checked> Near School</label>
+                <label><input type="checkbox" name="calc-amenities" value="park" checked> Near Park</label>
+                <label><input type="checkbox" name="calc-amenities" value="supermarket" checked> Supermarket Nearby</label><br><br>
+                <label>Max Distance to Transport (km): <input type="number" id="calc-proximity" min="0" max="20" value="10" required></label><br><br>
+                <button type="submit">Suggest Areas</button>
+            </form>
+            <div id="calc-results"></div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
